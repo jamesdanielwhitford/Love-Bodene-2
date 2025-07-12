@@ -6,12 +6,6 @@ import { MDXContent } from '@/components/content/MDXContent/MDXContent'
 import Link from 'next/link'
 import styles from './page.module.css'
 
-interface PageProps {
-  params: {
-    slug: string
-  }
-}
-
 export async function generateStaticParams() {
   const articles = await getAllArticles('pillow-talk')
   return articles.map((article) => ({
@@ -19,8 +13,13 @@ export async function generateStaticParams() {
   }))
 }
 
-export async function generateMetadata({ params }: PageProps) {
-  const article = await getArticleBySlug('pillow-talk', params.slug)
+export async function generateMetadata({ 
+  params 
+}: { 
+  params: Promise<{ slug: string }> 
+}) {
+  const { slug } = await params
+  const article = await getArticleBySlug('pillow-talk', slug)
   
   if (!article) {
     return {
@@ -34,8 +33,13 @@ export async function generateMetadata({ params }: PageProps) {
   }
 }
 
-export default async function ArticlePage({ params }: PageProps) {
-  const article = await getArticleBySlug('pillow-talk', params.slug)
+export default async function ArticlePage({ 
+  params 
+}: { 
+  params: Promise<{ slug: string }> 
+}) {
+  const { slug } = await params
+  const article = await getArticleBySlug('pillow-talk', slug)
 
   if (!article) {
     notFound()
