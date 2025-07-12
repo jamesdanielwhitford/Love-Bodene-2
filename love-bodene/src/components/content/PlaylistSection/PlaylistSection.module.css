@@ -1,0 +1,44 @@
+/* src/components/content/PlaylistSection/PlaylistSection.module.css */
+.playlistSection {
+  margin: 4rem 2rem;
+  font-family: var(--font-mono);
+}
+
+.playlistSection h2 {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.playlistGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.playlistItem {
+  border: 2px solid black;
+  padding: 1rem;
+  background: #f5f5f5;
+  box-shadow: 3px 3px 0 black;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.playlistItem:hover {
+  transform: translateY(-2px);
+  box-shadow: 5px 5px 0 var(--accent);
+}
+
+.playlistItem h3 {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+:global(body.dark) .playlistItem {
+  background: #1a1a1a;
+  border-color: #fff;
+  color: var(--text-dark);
+}

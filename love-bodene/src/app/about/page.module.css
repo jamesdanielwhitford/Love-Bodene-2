@@ -1,0 +1,92 @@
+/* src/app/about/page.module.css */
+.aboutMain {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.bigTitle {
+  font-size: 4rem;
+  font-family: var(--font-display);
+  margin: 4rem 0 1rem;
+  text-transform: uppercase;
+}
+
+.introGrid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  padding: 0 0 4rem;
+  font-family: var(--font-serif);
+}
+
+.poem {
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+
+.text p {
+  max-width: 60ch;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.aboutZine {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 4rem auto;
+  max-width: 960px;
+  padding: 0 2rem;
+}
+
+.blockLeft,
+.blockRight {
+  background: #f2f2f2;
+  padding: 2rem;
+  font-family: var(--font-mono);
+  border: 2px solid black;
+  box-shadow: 4px 4px 0 black;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blockLeft:hover,
+.blockRight:hover {
+  transform: translateY(-4px);
+  box-shadow: 6px 6px 0 var(--accent);
+}
+
+.blockLeft h2,
+.blockRight h2 {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.blockLeft p,
+.blockRight p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.blockLeft {
+  background: #fff9f9;
+}
+
+.blockRight {
+  background: #fff9f9;
+}
+
+@media (max-width: 768px) {
+  .introGrid,
+  .aboutZine {
+    grid-template-columns: 1fr;
+  }
+  
+  .bigTitle {
+    font-size: 2.5rem;
+  }
+}

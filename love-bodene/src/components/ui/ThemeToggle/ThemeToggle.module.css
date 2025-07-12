@@ -1,0 +1,19 @@
+/* src/components/ui/ThemeToggle/ThemeToggle.module.css */
+.toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: 1px solid currentColor;
+  color: inherit;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  transition: all 0.3s ease;
+}
+
+.toggle:hover {
+  background-color: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}

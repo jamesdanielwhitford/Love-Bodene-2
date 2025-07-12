@@ -1,0 +1,51 @@
+/* src/components/ui/MarqueeBanner/MarqueeBanner.module.css */
+.banner {
+  background: #000;
+  color: #fff;
+  font-family: var(--font-black);
+  overflow: hidden;
+  border-bottom: 1px solid #fff;
+  width: 100vw;
+  position: relative;
+  margin-left: calc(-50vw + 50%);
+}
+
+.marqueeTrack {
+  display: flex;
+  width: 200%;
+  animation: scrollLeft 20s linear infinite;
+}
+
+.marqueeContent {
+  display: flex;
+  width: 100%;
+  white-space: nowrap;
+  font-size: 6rem;
+  padding: 3rem 0;
+  justify-content: space-around;
+}
+
+.marqueeContent span {
+  margin-right: 2rem;
+  display: inline-block;
+}
+
+.banner:hover .marqueeTrack {
+  animation-play-state: paused;
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .marqueeContent {
+    font-size: 3rem;
+    padding: 2rem 0;
+  }
+}

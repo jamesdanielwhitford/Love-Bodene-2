@@ -1,0 +1,52 @@
+/* src/components/ui/FloatingTextSection/FloatingTextSection.module.css */
+.poeticIntro {
+  position: relative;
+  height: 88vh;
+  max-height: 600px;
+  background: black;
+  overflow: hidden;
+  font-family: var(--font-display);
+  color: #f2f2f2;
+  isolation: isolate;
+  margin-top: 4rem;
+}
+
+.fragment {
+  position: absolute;
+  font-size: clamp(1.1rem, 2vw, 2.4rem);
+  font-weight: 700;
+  color: #f2f2f2;
+  text-shadow: 0 0 8px rgba(240, 233, 219, 0.6), 0 0 15px rgba(165, 148, 230, 0.4);
+  cursor: pointer;
+  animation: drift 14s ease-in-out infinite alternate;
+  opacity: 0.85;
+  transform-origin: center;
+  transform: rotate(-1deg);
+  transition: color 0.4s ease, transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.fragment:hover {
+  color: var(--accent);
+  transform: scale(1.1) rotate(0deg);
+  text-shadow: 0 0 12px #9a7aff, 0 0 25px #7e63ff;
+}
+
+.fragment::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;
+  color: var(--accent);
+  opacity: 0;
+  z-index: -1;
+  filter: blur(3px);
+  animation: glitch-flicker 2.5s infinite;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.fragment:hover::after {
+  opacity: 0.3;
+}

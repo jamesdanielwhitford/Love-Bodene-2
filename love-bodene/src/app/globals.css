@@ -1,0 +1,82 @@
+/* src/app/globals.css */
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;700&family=Syne+Mono&family=Playfair+Display:wght@400;700&display=swap');
+
+/* Root Variables */
+:root {
+  --font-sans: 'Space Grotesk', sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: 'Syne Mono', monospace;
+  --font-display: 'Playfair Display', serif;
+  --font-black: 'Archivo Black', sans-serif;
+  --bg-light: #fefefe;
+  --bg-dark: #0f0f0f;
+  --text-light: #0f0f0f;
+  --text-dark: #fefefe;
+  --accent: #ff3366;
+  --grid: rgba(0, 0, 0, 0.05);
+}
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  background-image: linear-gradient(to right, var(--grid) 1px, transparent 1px),
+                    linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
+  background-size: 40px 40px;
+  transition: all 0.3s ease;
+}
+
+body.dark {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Keyframes */
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes drift {
+  0%   { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+  50%  { transform: translate(-12px, 22px) rotate(3deg); opacity: 0.7; }
+  100% { transform: translate(15px, -18px) rotate(-3deg); opacity: 1; }
+}
+
+@keyframes glitch-flicker {
+  0%, 100% { opacity: 0; transform: translate(0, 0); }
+  25%      { opacity: 0.15; transform: translate(1px, -1px); }
+  50%      { opacity: 0.1; transform: translate(-1px, 1px); }
+  75%      { opacity: 0.12; transform: translate(1px, 1px); }
+}
